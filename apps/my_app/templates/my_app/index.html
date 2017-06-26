@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>COURSE</title>
+  </head>
+  <body>
+
+
+
+    <h1>Add a new user</h1>
+    <form action="/submit_course" method="POST">
+      {% csrf_token %}
+      <label>COURSE</label>
+      <input type="text" name="course_name" value="">
+      <label>DESCRIPTION</label>
+      <input type="text" name="description_name" value="">
+      <label>DATE</label>
+      <input type="text" name="date_name" value="">
+      <input type="submit">
+    </form>
+
+
+    <h3>COURSES</h3>
+    <table>
+      <tr>
+        <th>COURSE</th>
+        <th>DESCRIPTION</th>
+        <th>DATE</th>
+      </tr>
+    
+
+  {% for course in courses %}
+      <tr>
+        
+      <td>{{ course.course_name }}</td>
+      <td>{{ course.description_name }}</td>
+      <td>{{ course.date_name }}</td>
+      <td>
+<a href="/delete_confirmation/{{course.id}}">Delete</a>
+      </td>
+      </tr>
+    
+      
+  {% endfor %}
+    </table> 
+
+  </body>
+</html>
