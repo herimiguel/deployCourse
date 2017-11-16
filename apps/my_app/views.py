@@ -6,14 +6,17 @@ from .models import Course
 # Create your views here.
 
 def index(request):
+    
     context={
         'courses': Course.objects.all()
     }
     return render(request, 'my_app/index.html', context)
 
 def submit_course(request):
-    Course.objects.create(course_name = request.POST['course_name'], description_name = request.POST['description_name'], date_name = request.POST['date_name'])
-    print Course.objects.all()
+    if request.method == "POST":
+        Course.objects.create(course_name = request.POST['course_name'], description_name = request.POST['description_name'])
+        Course.objects.all()
+        print request.POST
     return redirect('/')
 
 def delete_confirmation(request, id):

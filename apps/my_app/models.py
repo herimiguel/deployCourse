@@ -6,7 +6,6 @@ from django.db import models
 class Course(models.Model):
   course_name = models.CharField(max_length=101)
   description_name = models.CharField(max_length=100)
-  date_name = models.DateField(auto_now=True)
   created_at = models.DateField(auto_now_add=True)
   updated_at = models.DateField(auto_now=True)
 

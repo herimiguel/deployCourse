@@ -15,8 +15,8 @@
       <input type="text" name="course_name" value="">
       <label>DESCRIPTION</label>
       <input type="text" name="description_name" value="">
-      <label>DATE</label>
-      <input type="text" name="date_name" value="">
+      <!-- <label>DATE</label>
+      <input type="text" name="date_name" value=""> -->
       <input type="submit">
     </form>
 
@@ -35,7 +35,7 @@
         
       <td>{{ course.course_name }}</td>
       <td>{{ course.description_name }}</td>
-      <td>{{ course.date_name }}</td>
+      <td>{{ course.created_at }}</td>
       <td>
 <a href="/delete_confirmation/{{course.id}}">Delete</a>
       </td>
